@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言中心 | 我的世界pythonRE团</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 针对独立页面的特别样式 */
+        .comment-page-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        <div class="scrolling-text">📢 当前页面为全球同步留言中心，数据托管于 GitHub Issues。</div>
+    </div>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">117007 团队</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="comments.html" class="active" style="color:#3498db; border-bottom:2px solid #3498db;">留言板</a></li>
+                <li><a href="help_contents.html">帮助中心</a></li>
+                <li><a href="more.html">更多</a></li>
+                <li><a href="settings.html">设置</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="comment-page-container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="margin: 0; color: #2c3e50;">💬 留言板</h2>
+                <span id="comment-count" class="badge">同步中...</span>
+            </div>
+
+            <div class="info-banner">
+                <p><strong>队长提示：</strong> 此处显示的留言实时取自 GitHub。若遇到“同步失败”，说明请求过快，请稍后刷新或点击下方按钮直达 GitHub。</p>
+            </div>
+
+            <div id="github-comments">
+                <div class="loading-spinner">正在拉取云端数据...</div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <a href="https://github.com/shenxudong2019-collab/my-team-page/issues/new" target="_blank" class="btn-primary">
+                    + 发布新留言
+                </a>
+                <a href="index.html" target="_blank" class="btn-primary">返回团队主页</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 我的世界pythonRE团. Designed by 1936154.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

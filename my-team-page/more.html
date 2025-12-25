@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更多资源 | 我的世界pythonRE团</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .more-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .resource-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            border-color: #3498db;
+            box-shadow: 0 5px 15px rgba(52,152,219,0.1);
+        }
+        .resource-card h3 {
+            margin: 0 0 10px 0;
+            color: #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .resource-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .card-footer {
+            font-size: 12px;
+            color: #999;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="scrolling-text">📢 更多：在这里找到 pythonRE 团的所有资源。</div>
+    </div>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">117007 团队</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="comments.html">留言板</a></li>
+                <li><a href="help_contents.html">帮助中心</a></li>
+                <li><a href="more.html" class="active" style="color:#3498db; border-bottom:2px solid #3498db;">更多</a></li>
+                <li><a href="settings.html">设置</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header style="text-align: center; margin: 40px 0;">
+            <h1 style="font-size: 2rem; color: #2c3e50;">探索更多资源</h1>
+            <p style="color: #7f8c8d;">这里是 117007 团队的周边生态与合作导航</p>
+        </header>
+
+        <div class="more-grid">
+            <a href="https://www.luogu.com.cn/team/117007" target="_blank" class="resource-card">
+                <h3><img src="https://www.luogu.com.cn/favicon.ico" width="20"> 洛谷团队主页</h3>
+                <p>参与团队内部赛、查看作业题单，与 117007 成员共同进步。</p>
+                <div class="card-footer">前往洛谷 →</div>
+            </a>
+
+            <a href="https://github.com/shenxudong2019-collab/my-team-page" target="_blank" class="resource-card">
+                <h3><img src="https://cdn.luogu.com.cn/upload/image_hosting/66l3zhjb.png?x-oss-process=image/resize,m_lfit,h_170,w_225" width="30">GitHub 开源仓库</h3>
+                <p>本站代码已开源。欢迎提交 Pull Request 或指出 Bug。</p>
+                <div class="card-footer">查看代码 →</div>
+            </a>
+            <a href="acgo/index.html" class="resource-card">
+                <h3><img src="https://www.acgo.cn/favicon.ico" width="30">ACGO 分部</h3>
+                <p>ACGO 团队</p>
+                <div class="card-footer">去查看 →</div>
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // 为 more.html 特有的卡片添加弹窗逻辑
+        document.getElementById('member-trigger').addEventListener('click', () => {
+            document.getElementById('member-modal').style.display = 'block';
+        });
+    </script>
+    <footer>
+        <p>&copy; 2025 我的世界pythonRE团 | 更多资源</p>
+    </footer>
+</body>
+</html>

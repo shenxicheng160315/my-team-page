@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帮助中心 - 我的世界pythonRE团</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 洛谷风格专项覆盖 */
+        body {
+            background-color: #fff !important; /* 洛谷帮助中心背景通常较白 */
+        }
+        .help-layout {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .help-sidebar {
+        width: 200px;
+        flex-shrink: 0;
+        border-right: 1px solid #eee;
+        padding-right: 20px;
+
+        /* --- 核心：开启侧边吸顶 --- */
+        position: sticky;      /* 开启粘性定位 */
+        top: 60px;             /* 滚动到距离顶部 60px 的位置时固定 */
+        height: fit-content;   /* 高度自适应内容，否则吸顶可能失效 */
+        align-self: flex-start; /* 配合 flex 布局使用 */
+    }
+        .help-sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .help-sidebar li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f8f8f8;
+            transition: all 0.2s ease; /* 添加平滑过渡 */
+        }
+        .help-sidebar li:hover {
+            padding-left: 5px; /* 鼠标悬停时轻微向右移动，洛谷常见的交互细节 */
+            background-color: #f0f7ff;
+        }
+        .help-sidebar a {
+            display: block; /* 让整个行都可以点击 */
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .help-sidebar a:hover {
+            color: #3498db;
+        }
+        .help-content {
+            flex-grow: 1;
+            max-width: 800px;
+        }
+        .help-content h1 {
+            font-size: 28px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .help-content h2 {
+            font-size: 20px;
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+        .help-content p {
+            color: #555;
+            line-height: 1.8;
+        }
+        .luogu-card {
+            border: 1px solid #e8e8e8;
+            border-radius: 4px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        code {
+            background: #f8f8f8;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #e74c3c;
+            font-family: monospace;
+        }
+    </style>
+    </div>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        <div class="scrolling-text">📢 帮助中心：在这里了解 pythonRE 团的一切规范。</div>
+    </div>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">117007 团队</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="comments.html">留言板</a></li>
+                <li><a href="help_contents.html" class="active" style="color:#3498db; border-bottom:2px solid #3498db;">帮助中心</a></li>
+                <li><a href="more.html">更多</a></li>
+                <li><a href="settings.html">设置</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="help-layout">
+            <aside class="help-sidebar">
+                <h4 style="margin-top: 0;">目录</h4>
+                <ul>
+                    <li><a href="#comment">关于留言功能</a></li>
+                    <li><a href="#sync">数据同步机制</a></li>
+                    <li><a href="#admin">系统管理员权限</a></li>
+                </ul>
+                <div style="margin-top: 30px;">
+                    <a href="index.html" class="btn-outline" style="font-size: 12px; padding: 5px 10px;">← 返回主页</a>
+                </div>
+            </aside>
+
+            <main class="help-content">
+                <h1>帮助中心</h1>
+                
+                <section>
+                    <h2 id="comment"></h2>
+                    <h2>关于留言功能</h2>
+                    <p>为了保证交流的质量，本站留言系统对接了 <code>GitHub Issues</code>。用户在提交留言时应遵守洛谷及 GitHub 的相关社区规范。</p>
+                    <div class="luogu-card">
+                        <strong>发布流程：</strong>
+                        <ol>
+                            <li>进入 <a href="comments.html">留言中心</a> 或点击“我要留言”。</li>
+                            <li>跳转至 GitHub 仓库。</li>
+                            <li>在标题栏输入你的留言内容，点击 <code>Submit new issue</code>。</li>
+                        </ol>
+                    </div>
+		<p>如果显示错误可能是因为<strong>API 访问频率限制</strong></p>
+                </section>
+
+                <section>
+                    <h2 id="sync"></h2>
+                    <h2>数据同步机制</h2>
+                    <p>本站采用前端 API 抓取技术，数据每 60 秒（理论值）会与云端同步。如果您发现留言未显示，请确认以下几点：</p>
+                    <ul>
+                        <li>GitHub 仓库是否处于 <code>Open</code> 状态。</li>
+                        <li>您的浏览器是否启用了过于严格的广告拦截脚本。</li>
+                        <li>当前 IP 的 API 调用是否已达到每小时 60 次的上限。</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 id="admin"></h2>
+                    <h2>系统管理员权限</h2>
+                    <p>队长（UID: 1936154）拥有该系统的最高管理权。包括但不限于：</p>
+                    <ul>
+                        <li><strong>置顶：</strong> 重要的留言或公告。</li>
+                        <li><strong>删除：</strong> 对于不当言论进行“全球同步销毁”。</li>
+                        <li><strong>禁言：</strong> 通过 GitHub 屏蔽特定违规用户。</li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer style="border-top: 1px solid #eee; margin-top: 50px;">
+        <p>&copy; 2025 我的世界pythonRE团 | 遵循 洛谷社区规则</p>
+    </footer>
+
+</body>
+</html>
